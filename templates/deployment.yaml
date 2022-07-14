@@ -40,7 +40,7 @@ spec:
           {{- if .Values.secret.enabled }}
           - secretRef:
               name: {{ .Values.secret.name }}
-          {- end }}
+          {{- end }}
           {{- end }}
           ports:
             - name: http
