@@ -2,7 +2,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ .Values.ingress.name -}}
+  name: {{ .Values.ingress.name }}
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
@@ -15,7 +15,7 @@ spec:
           pathType: Prefix
           backend:
             service:
-              name: {{ .Values.component.name -}}
+              name: {{ .Values.component.name }}
               port:
-                number: {{ .Values.service.containerPort -}}
+                number: {{ .Values.service.containerPort }}
 {{- end }}
