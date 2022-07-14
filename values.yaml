@@ -36,10 +36,6 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
-service:
-  type: ClusterIP
-  port: 80
-
 ingress:
   enabled: false
   className: ""
@@ -83,3 +79,8 @@ affinity: {}
 
 secret:
   enabled: no
+
+service:
+  type: ClusterIP
+  port: 80
+  healthURL: "/health"
